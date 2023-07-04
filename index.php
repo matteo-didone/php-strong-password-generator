@@ -16,12 +16,71 @@ Handle additional parameters for the password, such as which characters to use a
 -->
 
 <?php
-    include __DIR__ . "/utilities/functions.php";
+include __DIR__ . "/utilities/functions.php";
 ?>
 
 <!DOCTYPE html>
-
 <html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP Strong Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="title-container">
+            <h1>Strong Password Generator</h1>
+            <h2>Genera una password sicura</h2>
+        </div>
+
+        <div class="no-parameter-inserted">
+            <p>Nessun parametro valido inserito</p>
+        </div>
+
+        <div class="form-container">
+            <form action="index.php" method="GET">
+                <div class="input-container">
+                    <label for="length">Password Length:</label>
+                    <input type="number" name="length" id="length" min="1" required>
+                </div>
+                <div class="right-container">
+                    <p>Allow repetition of one or more characters:</p>
+                    <input type="radio" id="yes" name="repetition" value="yes" checked>
+                    <label for="yes">Yes</label>
+                    <input type="radio" id="no" name="repetition" value="no">
+                    <label for="no">No</label>
+                    <br>
+                    <input type="checkbox" id="letters" name="characters[]" value="letters" checked>
+                    <label for="letters">Letters</label>
+                    <input type="checkbox" id="numbers" name="characters[]" value="numbers" checked>
+                    <label for="numbers">Numbers</label>
+                    <input type="checkbox" id="symbols" name="characters[]" value="symbols" checked>
+                    <label for="symbols">Symbols</label>
+                </div>
+                <input type="submit" value="Generate Password">
+                <input type="button" value="Annulla">
+            </form>
+        </div>
+
+        <div class="printed-password-container">
+            <h1>La tua password è:</h1>
+            <p>
+                <?php echo generateRandomPassword(); ?>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>
+
 
 <head>
     <meta charset="UTF-8">
@@ -58,11 +117,11 @@ Handle additional parameters for the password, such as which characters to use a
 
         <div class="printed-password-container">
             <h1>La tua password è:</h1>
-            <p><?php echo generateRandomPassword(); ?></p>
+            <p>
+                <?php echo generateRandomPassword(); ?>
+            </p>
         </div>
     </div>
 </body>
 
 </html>
-
-
