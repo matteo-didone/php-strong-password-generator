@@ -8,6 +8,15 @@ function generateRandomPassword()
     $password = "";
     // Define the characters that can be used in the password
     $characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?";
+
+    $charactersLowerCase = "abcdefghijklmnopqrstuvwxyz";
+
+    $charactersUpperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    $charactersNumbers = "0123456789";
+
+    $charactersSymbols = "!@#$%^&*()_-=+;:,.?";
+
     // Save in a variable the length of the characters string
     $charactersLength = strlen($characters);
 

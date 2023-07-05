@@ -38,7 +38,7 @@ include __DIR__ . "/utilities/functions.php";
     <div class="container">
         <div class="title-container">
             <h1>Strong Password Generator</h1>
-            <h2>Genera una password sicura</h2>
+            <h2>Genera una password siura</h2>
         </div>
 
         <div class="no-parameter-inserted">
